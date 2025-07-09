@@ -1,0 +1,30 @@
+#navbar nav{
+    display: flex;
+    font-weight: 600;
+    gap: 5vw;
+    padding: 1%;
+    font-size: 18px;
+}
+#navbar nav a{
+    
+    text-decoration: none;
+}
+#img img{
+	height: 60vh;
+	width: 100vw;
+	margin-top: 1.4%;
+}
+#about-us h1{
+	text-align: center;
+}
+#about-us h1 ,#login-registeation h1{
+	text-decoration: underline;
+	font-weight: 500;
+}
+#about-us ,#login-registeation ,#copy-right{
+	margin: 0 1%;
+}
+#copy-right{
+	margin: 1% 0% 0;
+}
+

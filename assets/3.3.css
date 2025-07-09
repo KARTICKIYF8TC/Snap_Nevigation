@@ -1,0 +1,131 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+#main{
+	margin: 0 1%;
+}
+#img{
+	background: linear-gradient(rgba(0,0,0,.6)),url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5zZssUGcYKemDhSYO_4Jesko-iYHvmI3H1g&s");
+	height: 30vh;
+	background-repeat: no-repeat;
+	background-size: 100vw 30vh;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+
+}
+#banner{
+	height: 3vh;
+	display: flex;
+}
+#b-1{
+	height: calc(100%/3);
+	width: 100%;
+	background-color: #60DBD6;
+}
+#b-2{
+	height: calc(100%/3);
+	width: 100%;
+	background-color: #91DEAA;
+}
+#b-3{
+	height: calc(100%/3);
+	width: 100%;
+	background-color: #FD836B;
+}
+#dept{
+	display: flex;
+	width: 98vw;
+	height: 50vh ;
+	
+}
+.format{
+	width: calc(100%/3);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 2%;
+}
+
+.dept-img{
+	background-color: #60DBD6;
+    padding: 2%;
+    border-radius: 80px;
+    height: 100%;
+    overflow: hidden;
+}
+.dept-img img{
+	height: 96%; 
+    margin-left: 5%;
+    margin-top: 11%;
+}
+.img-outline{
+	border: 2px solid #60DBD6;
+	padding: 2%;
+	border-radius: 80px;
+	height: 25vh;
+	width: 12vw;
+}
+.img-outline p{
+	background-color: #60DBD6;
+	color: #fff;
+	margin-top: 8%; 
+	text-align: center;
+	padding: 2%;
+	font-size: 16px;
+}
+
+.name {
+	background-color: #60DBD6;
+	color: #fff;
+	margin-top: 8%;
+	text-align: center;
+	padding: 2%;
+	font-size: 16px;
+	width: 12vw;
+	border-radius: 5px;
+}
+
+.format h3 {
+	margin-top: 10px;
+	color: #bbb;
+	font-weight: 500;
+	border-bottom: 2px solid #bbb;
+	padding-bottom: 5px;
+	width: 60%;
+	text-align: center;
+}
+
+
+.desc {
+	text-align: center;
+	color: #999;
+	padding: 10px;
+	font-size: 14px;
+	width: 80%;
+}
+
+.social-icons {
+	margin-top: 10px;
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	font-size: 16px;
+}
+
+#marketing h3 {
+	border-bottom: 2px solid #60DBD6;
+}
+
+#designer h3 {
+	border-bottom: 2px solid #91DEAA;
+}
+
+#productor h3 {
+	border-bottom: 2px solid #FD836B;
+}

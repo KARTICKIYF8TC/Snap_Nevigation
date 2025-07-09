@@ -1,0 +1,153 @@
+/*=====reset Css====*/
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  a:hover{
+      color: inherit;
+  }
+  
+  .main{
+      background: #eee;
+      min-height: 78vh;
+  }
+  
+  .container{
+      width: 80%;
+  /*	background: #eee;*/
+      margin: 0 auto;
+      padding: 15px;
+  }
+  .heading{color: #234467;}
+  .loginsignup_area{
+      width: 100%;
+  }
+  .register_form{
+      width: calc(50% - 10px);
+      float: left;
+      padding: 5px 15px;
+      margin-right: 10px;
+  }
+  
+  .reg_heading,.login_heading{
+      color: #121212;
+      text-transform: uppercase;
+      font-size: 22px;
+      margin-bottom: 10px;
+  }
+  .reg_heading span{
+      color: #234467;
+  }
+  .reg_input,.login_input{
+      width: 100%;
+      padding: 5px 8px;
+      height: 38px;
+      border: 1px solid #d00;
+      margin-bottom: 15px;
+  
+  }
+  .reg_input:focus{
+      outline: 0;
+  }
+  .reg_btn_area{
+      width: 100%;
+      text-align: right;
+  }
+  .reg_btn{
+      border:2px solid #234467;
+      color: #234467;
+      padding: 4px 12px;
+      font-weight: 600;
+      transition: all 0.6s ease-in-out;
+  }
+  .reg_btn:hover{
+      background: #234467;
+      color: #fff;
+  }
+  
+  .login_form{
+      width: calc(50% - 10px);
+      background: #234467;
+      float: left;
+      padding: 5px 15px;
+      margin-left: 10px;
+      padding-bottom: 86px;
+  }
+  .login_heading{
+      color:#fff;
+  }
+  .login_form form{
+      padding: 0 10px;
+  }
+  .login_input{
+      border: none;
+  }
+  .reg_btn_area{
+      width: 100%;
+      text-align: right;
+  }
+  .rem_me{
+      width: auto;
+      float: left;
+      text-align: left;
+      color: #fff;
+  }
+  
+  .login_btn{
+      border:2px solid #ff6000;
+      color: #fff;
+      padding: 4px 12px;
+      font-weight: 600;
+      transition: all 0.6s ease-in-out;
+      background: transparent;
+  }
+  .login_btn:hover{
+      background: #ff6000;
+  }
+  .forgot{
+      color: #fff;
+      text-decoration: none;
+  }
+  
+  
+  
+  
+  
+  

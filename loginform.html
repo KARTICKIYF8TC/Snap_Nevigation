@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>LOGIN</title>
+   <link rel="stylesheet" type="text/css" href="Assignment_5-1.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form action="#">
+        <div class="full">
+            <h2>WELCOME TO SNAP GAMES</h2>
+            <div class="content1">
+                <div class="content2">
+                    <div class="input">
+                        <input type="text" placeholder="Name" id="texts">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="input">
+                        <input type="tel" placeholder="Phone" id="numbers" onkeyup="numberchick()">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <div class="input">
+                        <input type="Email" placeholder="Email" id="Emails">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </div>
+
+            </div>
+            <button onclick="clickme()" type="submit">LOGIN</button><br><br></form>
+            <p style="color: aquamarine;">Click the button billow after login to redirect--</p><br><br>
+            <button style="background-color: aqua;" type="submit"><a href="game.html">Redirect</a></button>
+                    </div>
+            
+   
+    <script>
+        function clickme()
+        {
+            let a=document.getElementById('texts').value;
+            let b=document.getElementById('numbers').value;
+            let c=document.getElementById('Emails').value;
+            
+            if(a=="" || b==""|| c=="")
+            {
+                alert("Form are Not Fill");
+            }
+            else if(!/^[A-Z a-z]+$/.test(a))
+            {
+                alert("Name input only text");
+            }
+            
+            else if(b.length!=10)
+            {     
+                alert("Enter 10 numbers");
+            }
+            else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c))
+            {
+                alert("Input Proper Email");
+            }
+            else
+            {
+                alert("Login success get back to previous page");
+            }
+        }
+    </script>
+</body>
+</html>

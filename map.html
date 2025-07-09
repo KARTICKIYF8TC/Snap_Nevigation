@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Map - CCLMS</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 100%);
+      min-height: 100vh;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #2d5a2d 0%, #4a7c4a 100%);
+      padding: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 20%, transparent 20%);
+      background-size: 30px 30px;
+      opacity: 0.5;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .header h1 {
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      color: #e8f5e8;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .main-container {
+      max-width: 1200px;
+      margin: -2rem auto 0;
+      position: relative;
+      z-index: 3;
+      padding: 0 1rem;
+    }
+
+    .map-section {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(45,90,45,0.1);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid #e8f5e8;
+    }
+
+    .map-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2d5a2d, #4a7c4a, #2d5a2d);
+      background-size: 200% 100%;
+    }
+
+    .map-title {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .map-title h2 {
+      color: #2d5a2d;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .map-title p {
+      color: #4a7c4a;
+      font-size: 1rem;
+    }
+
+    .map-container {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(45,90,45,0.1);
+      background: #f8fdf8;
+      border: 2px solid #e8f5e8;
+    }
+
+    .map-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(45,90,45,0.05), rgba(74,124,74,0.05));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(45,90,45,0.1);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 2px solid #e8f5e8;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(45,90,45,0.15);
+      border-color: #4a7c4a;
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2d5a2d, #4a7c4a);
+    }
+
+    .contact-card.address::before {
+      background: linear-gradient(90deg, #228b22, #32cd32);
+    }
+
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #2d5a2d, #4a7c4a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 5px 15px rgba(45,90,45,0.3);
+    }
+
+    .contact-card.address .contact-icon {
+      background: linear-gradient(135deg, #228b22, #32cd32);
+      box-shadow: 0 5px 15px rgba(34,139,34,0.3);
+    }
+
+    .contact-card h3 {
+      color: #2d5a2d;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card p {
+      color: #4a7c4a;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card a {
+      color: #2d5a2d;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .contact-card a:hover {
+      color: #228b22;
+    }
+
+    .phone-number {
+      color: #2d5a2d;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: #4a7c4a;
+      margin-top: 3rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .map-section {
+        padding: 1.5rem;
+        margin: -1rem 1rem 2rem;
+      }
+      
+      .contact-section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      iframe {
+        height: 350px;
+      }
+    }
+
+    /* Glassmorphism effect */
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <div class="header">
+    <div class="header-content">
+      <h1><i class="fas fa-map-marker-alt"></i> Location & Contact</h1>
+      <p>Find us easily with our interactive map and contact information</p>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Map Section -->
+    <div class="map-section">
+      <div class="map-title">
+        <h2>Our Location</h2>
+        <p>Visit us at our campus location in Purba Medinipur, West Bengal</p>
+      </div>
+      
+      <div class="map-container">
+        <iframe 
+          class="gmap_iframe" 
+          frameborder="0" 
+          scrolling="no" 
+          marginheight="0" 
+          marginwidth="0" 
+          src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=cclms&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          title="CCLMS Location Map">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="contact-section">
+      <!-- Address Card -->
+      <div class="contact-card address">
+        <div class="contact-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <h3>Our Address</h3>
+        <p><strong>Village:</strong> Padmapukuria</p>
+        <p><strong>Post Office & Police Station:</strong> Contai</p>
+        <p><strong>District:</strong> Purba Medinipur</p>
+        <p><strong>State:</strong> West Bengal</p>
+        <p><strong>PIN Code:</strong> 721401</p>
+      </div>
+
+      <!-- Contact Card -->
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <h3>Contact Information</h3>
+        <p><strong>Email:</strong></p>
+        <p><a href="mailto:admin@cclms.org">admin@cclms.org</a></p>
+        <p><strong>Phone:</strong></p>
+        <p class="phone-number">03220 288070</p>
+        <p><strong>Office Hours:</strong></p>
+        <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2024 CCLMS. All rights reserved.</p>
+  </div>
+</body>
+</html>

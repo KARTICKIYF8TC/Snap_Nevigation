@@ -1,0 +1,335 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f1efef;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Form Container */
+        form {
+            width: 100%;
+            max-width: 600px;
+            background: #6fc77b;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            border: 1px solid #e5e9f0;
+            transition: all 0.3s ease;
+        }
+
+        form:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(37, 99, 235, 0.2);
+            border-color: #3b82f6;
+        }
+
+        /* Main Container */
+        .full {
+            padding: 40px;
+        }
+
+        /* Header */
+        .full h2 {
+            text-align: center;
+            color: #3b82f6;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .full h2:hover {
+            color: #60a5fa;
+            transform: scale(1.05);
+            text-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+        }
+
+        /* Content Layout */
+        .content1 {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content2 {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .text {
+            flex: 1;
+            position: relative;
+        }
+
+        /* Input Container */
+        .input {
+            position: relative;
+            background: #262626;
+            border-radius: 15px;
+            border: 2px solid #404040;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .input:hover {
+            border-color: #3b82f6;
+            background: #2a2a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+        }
+
+        .input:focus-within {
+            border-color: #2563eb;
+            background: #2a2a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        /* Input Fields */
+        .input input {
+            width: 100%;
+            padding: 18px 50px 18px 20px;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 16px;
+            color: #e5e5e5;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .input input::placeholder {
+            color: #9ca3af;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .input:hover input::placeholder {
+            color: #60a5fa;
+            transform: translateX(3px);
+        }
+
+        .input input:focus {
+            color: #ffffff;
+        }
+
+        /* Icons */
+        .input i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #3b82f6;
+            font-size: 18px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .input:hover i {
+            color: #60a5fa;
+            transform: translateY(-50%) scale(1.2) rotate(5deg);
+        }
+
+        /* Textarea Container */
+        .text {
+            background: #262626;
+            border-radius: 15px;
+            border: 2px solid #404040;
+            transition: all 0.3s ease;
+        }
+
+        .text:hover {
+            border-color: #3b82f6;
+            background: #2a2a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+        }
+
+        .text:focus-within {
+            border-color: #2563eb;
+            background: #2a2a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        /* Textarea */
+        #area {
+            width: 100%;
+            height: 200px;
+            padding: 20px;
+            border: none;
+            outline: none;
+            background: transparent;
+            resize: vertical;
+            font-size: 16px;
+            color: #e5e5e5;
+            font-family: 'Arial', sans-serif;
+            font-weight: 500;
+            line-height: 1.5;
+            transition: all 0.3s ease;
+        }
+
+        #area::placeholder {
+            color: #9ca3af;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        #area:focus {
+            color: #ffffff;
+        }
+
+        .text:hover #area::placeholder {
+            color: #60a5fa;
+            transform: translateX(3px);
+        }
+
+        /* Textarea Icon */
+        .abslut {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: #3b82f6;
+            font-size: 18px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .text:hover .abslut {
+            color: #60a5fa;
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        /* Submit Button */
+        button {
+            width: 100%;
+            padding: 18px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(29, 78, 216, 0.4);
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        button:active {
+            background: #1e40af;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(29, 78, 216, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content1 {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .full {
+                padding: 30px 25px;
+            }
+            
+            .full h2 {
+                font-size: 2em;
+                margin-bottom: 25px;
+            }
+            
+            .input input {
+                padding: 15px 45px 15px 18px;
+            }
+            
+            #area {
+                height: 150px;
+                padding: 18px;
+            }
+            
+            button {
+                padding: 16px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            .full {
+                padding: 25px 20px;
+            }
+            
+            .full h2 {
+                font-size: 1.8em;
+            }
+            
+            .input input {
+                padding: 14px 40px 14px 16px;
+                font-size: 15px;
+            }
+            
+            .input i {
+                right: 15px;
+                font-size: 16px;
+            }
+            
+            #area {
+                height: 130px;
+                padding: 16px;
+                font-size: 15px;
+            }
+            
+            .abslut {
+                right: 15px;
+                top: 16px;
+                font-size: 16px;
+            }
+        }
+
+        /* Focus States for Better Accessibility */
+        input:focus,
+        textarea:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
